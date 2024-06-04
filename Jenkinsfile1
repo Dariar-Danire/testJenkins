@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage("Start tests") {
+        stage('Start tests') {
             sh './test1.sh'
             sh './test2.sh'
             sh './test3.sh'
