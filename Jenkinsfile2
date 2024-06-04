@@ -2,11 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Checking for file availability') {
-            script {
-                if (fileExists(prod.go)) {
-                    echo "File prod.go found"
-                } else {
-                    error "File prod.go not found"
+            steps {
+                script {
+                    if (fileExists(prod.go)) {
+                        echo "File prod.go found"
+                    } else {
+                        error "File prod.go not found"
+                    }
                 }
             }
         }
