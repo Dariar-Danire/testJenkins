@@ -2,11 +2,12 @@ pipeline {
     agent any
     stages {
         stage('') {
-            when {
-                expression { sh 'test -e ./prod.go' }
-            }
-            steps {
-                sh './prod.go'
+            script {
+                if (fileExists(prod.go)) {
+                    echo "File prod.go found"
+                } else {
+                    error "File prod.go not found"
+                }
             }
         }
     }
