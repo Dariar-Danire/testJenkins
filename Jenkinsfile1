@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage("Start tests") {
+            sh '.tests/test1.sh'
+            sh '.tests/test2.sh'
+            sh '.tests/test3.sh'
+        }
+    }
+}
