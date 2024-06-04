@@ -2,9 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Start tests') {
-            sh './test1.sh'
-            sh './test2.sh'
-            sh './test3.sh'
+            ./test1.sh
+            ./test2.sh
+            ./test3.sh
         }
     }
 }
