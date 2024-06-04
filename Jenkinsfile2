@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('') {
+        stage('Checking for file availability') {
             script {
                 if (fileExists(prod.go)) {
                     echo "File prod.go found"
