@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stare('Checkout') {
+        stage('Checkout') {
             steps {
                 git url: 'https://github.com/Dariar-Danire/testJenkins.git', branch: 'prod'
             }
