@@ -4,10 +4,10 @@ pipeline {
         stage('Checking for file availability') {
             steps {
                 script {
-                    if (fileExists(prod.go)) {
-                        echo "File prod.go found"
+                    if (fileExists(main.go)) {
+                        echo "File main.go found"
                     } else {
-                        error "File prod.go not found"
+                        error "File main.go not found"
                     }
                 }
             }
