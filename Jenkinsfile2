@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stare('Checkout') {
+            steps {
+                git url: 'https://github.com/Dariar-Danire/testJenkins.git', branch: 'prod'
+            }
+        }
+        
         stage('Checking for file availability') {
             steps {
                 script {
