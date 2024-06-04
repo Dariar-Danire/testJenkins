@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('') {
+            when {
+                expression { sh 'test -e ./prod.go' }
+            }
+            steps {
+                sh './prod.go'
+            }
+        }
+    }
+}
