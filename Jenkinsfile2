@@ -8,14 +8,11 @@ pipeline {
         }
         
         stage('Checking for file availability') {
+            when {
+                expression { return fileExists('prod.go') }
+            }
             steps {
-                script {
-                    if (fileExists('prod.go')) {
-                        sh './prog.go'
-                    } else {
-                        error "File prod.go not found"
-                    }
-                }
+                go run prod.go
             }
         }
     }
