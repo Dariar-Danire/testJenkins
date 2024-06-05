@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     if (fileExists('prod.go')) {
-                        echo "File prod.go found"
+                        sh './prog.go'
                     } else {
                         error "File prod.go not found"
                     }
